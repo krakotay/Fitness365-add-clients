@@ -1,6 +1,5 @@
 import requests
 from base64 import b64encode
-import json
 import pandas as pd
 
 def basic_auth(username, password):
