@@ -13,7 +13,7 @@ password = ""
 headers = { 'Authorization' : basic_auth(username, password) }
 
 
-data = pd.read_csv('file1.csv')
+data = pd.read_csv('file.csv')
 
 #Сам код
 
