@@ -20,9 +20,9 @@ data = pd.read_csv('file1.csv')
 print(data.head())
 i = 0
 data['phone'] = data['phone'].astype(str)
-while i < data.shape[0] - 1:
-    name = data['Last Name'][i]
-    surname =data['First Name'][i]
+while i < data.shape[0]:
+    name = data['First Name'][i]
+    surname =data['Last Name'][i]
     orgId = ''
     phone = data['phone'][i]
     data2 = {'firstName' : name, 'lastName' : surname, 'organizationId' : orgId , 'phone' : phone}
