@@ -7,6 +7,7 @@ def basic_auth(username, password):
     token = b64encode(f"{username}:{password}".encode('utf-8')).decode("ascii")
     return f'Basic {token}'
 
+#Необходимо ввести данные, я их из соображений безопасности уберу
 username = ""
 password = ""
 
@@ -23,6 +24,7 @@ data['phone'] = data['phone'].astype(str)
 while i < data.shape[0]:
     name = data['First Name'][i]
     surname =data['Last Name'][i]
+    #Необходимо ввести ID фитнес-клуба
     orgId = ''
     phone = data['phone'][i]
     data2 = {'firstName' : name, 'lastName' : surname, 'organizationId' : orgId , 'phone' : phone}
