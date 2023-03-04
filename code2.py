@@ -1,6 +1,8 @@
 import requests
 from base64 import b64encode
 import pandas as pd
+from tabulate import tabulate
+import json
 
 def basic_auth(username, password):
     token = b64encode(f"{username}:{password}".encode('utf-8')).decode("ascii")
@@ -28,5 +30,5 @@ while i < data.shape[0]:
     phone = data['phone'][i]
     data2 = {'firstName' : name, 'lastName' : surname, 'organizationId' : orgId , 'phone' : phone}
     send_user = requests.post(" https://w.fitness365.ru/api/v1/client", json=data2, headers=headers)
-    print(send_user.text)
+    print(tabulate(json.loads(send_user.text)['data']['items'], headers="keys"))    
     i = i + 1
